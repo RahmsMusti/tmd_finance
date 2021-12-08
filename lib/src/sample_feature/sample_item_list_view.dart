@@ -20,14 +20,14 @@ class SampleItemListView extends StatelessWidget {
     const Tab(text: 'Monthly Summary'),
   ];
 
-  static const Map<String, double> months = {
-    'January': 0.0,
-    'February': 1.2,
-    'March': 1.375,
-    'April': 1.55,
-    'May': 1.725,
-    'June': 3.42,
-  };
+  static const List<String> months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -43,20 +43,20 @@ class SampleItemListView extends StatelessWidget {
               const Text(
                 'tmd: budget',
               ),
-              DropdownButton<double>(
+              DropdownButton<String>(
                 icon: const Icon(Icons.arrow_drop_down_sharp),
-                items: months
-                    .map((name, value) {
-                      return MapEntry(
-                        name,
-                        DropdownMenuItem<double>(
-                          value: value,
-                          child: Text(name),
-                        ),
-                      );
-                    })
-                    .values
-                    .toList(),
+                iconSize: 24,
+                elevation: 16,
+                style: const TextStyle(
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.red),
+                items: months.map((name) {
+                  return DropdownMenuItem<String>(
+                    value: name,
+                    child: Text(name),
+                  );
+                }).toList(),
               )
             ],
           ),
