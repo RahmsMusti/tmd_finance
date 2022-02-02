@@ -73,7 +73,7 @@ class TmdBudget extends StatelessWidget {
                     return const SampleItemDetailsView();
                   case SampleItemListView.routeName:
                   default:
-                    return SampleItemListView();
+                    return const SampleItemListView();
                 }
               },
             );

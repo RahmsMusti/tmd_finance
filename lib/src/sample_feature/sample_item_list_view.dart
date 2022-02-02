@@ -5,8 +5,8 @@ import 'sample_item.dart';
 import 'sample_item_details_view.dart';
 
 /// Displays a list of SampleItems.
-class SampleItemListView extends StatelessWidget {
-  SampleItemListView({
+class SampleItemListView extends StatefulWidget {
+  const SampleItemListView({
     Key? key,
     this.items = const [SampleItem(1), SampleItem(2), SampleItem(3)],
   }) : super(key: key);
@@ -15,19 +15,32 @@ class SampleItemListView extends StatelessWidget {
 
   final List<SampleItem> items;
 
+  static const List<String> months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+
+  @override
+  State<SampleItemListView> createState() => _SampleItemListViewState();
+}
+
+class _SampleItemListViewState extends State<SampleItemListView> {
   final List<Tab> myTabs = <Tab>[
     const Tab(text: 'Budget'),
     const Tab(text: 'Monthly Summary'),
   ];
 
-  static const Map<String, double> months = {
-    'January': 0.0,
-    'February': 1.2,
-    'March': 1.375,
-    'April': 1.55,
-    'May': 1.725,
-    'June': 3.42,
-  };
+  String dropdownValue = SampleItemListView.months[0];
 
   @override
   Widget build(BuildContext context) {
@@ -40,23 +53,47 @@ class SampleItemListView extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const Text(
-                'tmd: budget',
+              Row(
+                children: const [
+                  SizedBox(
+                    width: 105,
+                  ),
+                  Text(
+                    'tmd: budget',
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
-              DropdownButton<double>(
-                icon: const Icon(Icons.arrow_drop_down_sharp),
-                items: months
-                    .map((name, value) {
-                      return MapEntry(
-                        name,
-                        DropdownMenuItem<double>(
-                          value: value,
-                          child: Text(name),
-                        ),
+              Row(
+                children: [
+                  const SizedBox(
+                    width: 115,
+                  ),
+                  DropdownButton<String>(
+                    value: dropdownValue,
+                    icon: const Icon(Icons.arrow_drop_down_sharp),
+                    iconSize: 24,
+                    elevation: 16,
+                    alignment: AlignmentDirectional.center,
+                    style: const TextStyle(
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white),
+                    dropdownColor: Colors.grey,
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownValue = newValue!;
+                      });
+                    },
+                    items: SampleItemListView.months.map((name) {
+                      return DropdownMenuItem<String>(
+                        alignment: AlignmentDirectional.center,
+                        value: name,
+                        child: Text(name),
                       );
-                    })
-                    .values
-                    .toList(),
+                    }).toList(),
+                  ),
+                ],
               )
             ],
           ),
@@ -87,9 +124,9 @@ class SampleItemListView extends StatelessWidget {
           // scroll position when a user leaves and returns to the app after it
           // has been killed while running in the background.
           restorationId: 'sampleItemListView',
-          itemCount: items.length,
+          itemCount: widget.items.length,
           itemBuilder: (BuildContext context, int index) {
-            final item = items[index];
+            final item = widget.items[index];
 
             return ListTile(
                 title: Text('SampleItem ${item.id}'),
