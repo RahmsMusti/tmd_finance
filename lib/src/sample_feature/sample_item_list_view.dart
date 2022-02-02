@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../settings/settings_view.dart';
 import 'sample_item.dart';
-import 'sample_item_details_view.dart';
+// import 'sample_item_details_view.dart';
 
 /// Displays a list of SampleItems.
 class SampleItemListView extends StatefulWidget {
@@ -119,31 +119,62 @@ class _SampleItemListViewState extends State<SampleItemListView> {
         // In contrast to the default ListView constructor, which requires
         // building all Widgets up front, the ListView.builder constructor lazily
         // builds Widgets as they’re scrolled into view.
-        body: ListView.builder(
+        body: ListView(
           // Providing a restorationId allows the ListView to restore the
           // scroll position when a user leaves and returns to the app after it
           // has been killed while running in the background.
           restorationId: 'sampleItemListView',
-          itemCount: widget.items.length,
-          itemBuilder: (BuildContext context, int index) {
-            final item = widget.items[index];
-
-            return ListTile(
-                title: Text('SampleItem ${item.id}'),
-                leading: const CircleAvatar(
-                  // Display the Flutter Logo image asset.
-                  foregroundImage: AssetImage('assets/images/flutter_logo.png'),
+          children: [
+            Container(
+              height: 50,
+              color: Colors.green[600],
+              child: const Center(
+                  child: Text(
+                'Income',
+                style: TextStyle(
+                  color: Colors.white,
                 ),
-                onTap: () {
-                  // Navigate to the details page. If the user leaves and returns to
-                  // the app after it has been killed while running in the
-                  // background, the navigation stack is restored.
-                  Navigator.restorablePushNamed(
-                    context,
-                    SampleItemDetailsView.routeName,
-                  );
-                });
-          },
+              )),
+            ),
+            Container(
+              height: 50,
+              color: Colors.cyan[600],
+              child: const Center(
+                  child: Text(
+                'Fixed Expenses',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              )),
+            ),
+            Container(
+              height: 50,
+              color: Colors.lightBlue[900],
+              child: const Center(
+                  child: Text(
+                'Savings',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              )),
+            ),
+          ],
+
+          // ListTile(
+          //     title: Text('SampleItem ${item.id}'),
+          //     leading: const CircleAvatar(
+          //       // Display the Flutter Logo image asset.
+          //       foregroundImage: AssetImage('assets/images/flutter_logo.png'),
+          //     ),
+          //     onTap: () {
+          //       // Navigate to the details page. If the user leaves and returns to
+          //       // the app after it has been killed while running in the
+          //       // background, the navigation stack is restored.
+          //       Navigator.restorablePushNamed(
+          //         context,
+          //         SampleItemDetailsView.routeName,
+          //       );
+          //     });
         ),
       ),
     );
