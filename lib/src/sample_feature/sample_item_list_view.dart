@@ -119,62 +119,266 @@ class _SampleItemListViewState extends State<SampleItemListView> {
         // In contrast to the default ListView constructor, which requires
         // building all Widgets up front, the ListView.builder constructor lazily
         // builds Widgets as they’re scrolled into view.
-        body: ListView(
-          // Providing a restorationId allows the ListView to restore the
-          // scroll position when a user leaves and returns to the app after it
-          // has been killed while running in the background.
-          restorationId: 'sampleItemListView',
+        body: TabBarView(
           children: [
-            Container(
-              height: 50,
-              color: Colors.green[600],
-              child: const Center(
-                  child: Text(
-                'Income',
-                style: TextStyle(
-                  color: Colors.white,
+            ListView(
+              // Providing a restorationId allows the ListView to restore the
+              // scroll position when a user leaves and returns to the app after it
+              // has been killed while running in the background.
+              restorationId: 'sampleItemListView',
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.green[600],
+                        child: const Center(
+                          child: Text(
+                            'Income',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.green[600],
+                        child: const Center(
+                          child: Text(
+                            'Budget',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.green[600],
+                        child: const Center(
+                          child: Text(
+                            'Actual',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.green[600],
+                        child: const Center(
+                          child: Text(
+                            'Difference',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              )),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  height: 50,
+                  color: Colors.cyan[600],
+                  child: const Center(
+                    child: Text(
+                      'Fixed Expenses',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  height: 50,
+                  color: Colors.lightBlue[900],
+                  child: const Center(
+                    child: Text(
+                      'Savings',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  height: 50,
+                  color: Colors.deepOrange[300],
+                  child: const Center(
+                    child: Text(
+                      'Variable Expenses',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  height: 50,
+                  color: Colors.brown[600],
+                  child: const Center(
+                    child: Text(
+                      'Miscelleanous Expenses',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+
+              // ListTile(
+              //     title: Text('SampleItem ${item.id}'),
+              //     leading: const CircleAvatar(
+              //       // Display the Flutter Logo image asset.
+              //       foregroundImage: AssetImage('assets/images/flutter_logo.png'),
+              //     ),
+              //     onTap: () {
+              //       // Navigate to the details page. If the user leaves and returns to
+              //       // the app after it has been killed while running in the
+              //       // background, the navigation stack is restored.
+              //       Navigator.restorablePushNamed(
+              //         context,
+              //         SampleItemDetailsView.routeName,
+              //       );
+              //     });
             ),
-            Container(
-              height: 50,
-              color: Colors.cyan[600],
-              child: const Center(
-                  child: Text(
-                'Fixed Expenses',
-                style: TextStyle(
-                  color: Colors.white,
+            ListView(
+              // Providing a restorationId allows the ListView to restore the
+              // scroll position when a user leaves and returns to the app after it
+              // has been killed while running in the background.
+              restorationId: 'sampleItemListView',
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.green[600],
+                        child: const Center(
+                          child: Text(
+                            'Income',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.green[600],
+                        child: const Center(
+                          child: Text(
+                            'Budget',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.green[600],
+                        child: const Center(
+                          child: Text(
+                            'Actual',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.green[600],
+                        child: const Center(
+                          child: Text(
+                            'Difference',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              )),
-            ),
-            Container(
-              height: 50,
-              color: Colors.lightBlue[900],
-              child: const Center(
-                  child: Text(
-                'Savings',
-                style: TextStyle(
-                  color: Colors.white,
+                Container(
+                  height: 50,
+                  color: Colors.cyan[600],
+                  child: const Center(
+                      child: Text(
+                    'Fixed Expenses',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  )),
                 ),
-              )),
+                Container(
+                  height: 50,
+                  color: Colors.lightBlue[900],
+                  child: const Center(
+                      child: Text(
+                    'Savings',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  )),
+                ),
+                Container(
+                  height: 50,
+                  color: Colors.deepOrange[300],
+                  child: const Center(
+                      child: Text(
+                    'Variable Expenses',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  )),
+                ),
+                Container(
+                  height: 50,
+                  color: Colors.brown[600],
+                  child: const Center(
+                    child: Text(
+                      'Miscelleanous Expenses',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
-
-          // ListTile(
-          //     title: Text('SampleItem ${item.id}'),
-          //     leading: const CircleAvatar(
-          //       // Display the Flutter Logo image asset.
-          //       foregroundImage: AssetImage('assets/images/flutter_logo.png'),
-          //     ),
-          //     onTap: () {
-          //       // Navigate to the details page. If the user leaves and returns to
-          //       // the app after it has been killed while running in the
-          //       // background, the navigation stack is restored.
-          //       Navigator.restorablePushNamed(
-          //         context,
-          //         SampleItemDetailsView.routeName,
-          //       );
-          //     });
         ),
       ),
     );
