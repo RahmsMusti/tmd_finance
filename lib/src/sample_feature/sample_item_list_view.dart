@@ -126,127 +126,35 @@ class _SampleItemListViewState extends State<SampleItemListView> {
               // scroll position when a user leaves and returns to the app after it
               // has been killed while running in the background.
               restorationId: 'sampleItemListView',
-              children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.green[600],
-                        child: const Center(
-                          child: Text(
-                            'Income',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.green[600],
-                        child: const Center(
-                          child: Text(
-                            'Budget',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.green[600],
-                        child: const Center(
-                          child: Text(
-                            'Actual',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.green[600],
-                        child: const Center(
-                          child: Text(
-                            'Difference',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+              children: const [
+                SectionTitles(
+                  colour: Color.fromARGB(255, 67, 160, 71),
+                  section: 'Income',
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
-                Container(
-                  height: 50,
-                  color: Colors.cyan[600],
-                  child: const Center(
-                    child: Text(
-                      'Fixed Expenses',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
+                SectionTitles(
+                    colour: Color.fromARGB(255, 0, 172, 193),
+                    section: 'Fixed Expenses'),
+                SizedBox(
                   height: 10,
                 ),
-                Container(
-                  height: 50,
-                  color: Colors.lightBlue[900],
-                  child: const Center(
-                    child: Text(
-                      'Savings',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
+                SectionTitles(
+                    colour: Color.fromARGB(255, 1, 87, 155),
+                    section: 'Savings'),
+                SizedBox(
                   height: 10,
                 ),
-                Container(
-                  height: 50,
-                  color: Colors.deepOrange[300],
-                  child: const Center(
-                    child: Text(
-                      'Variable Expenses',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
+                SectionTitles(
+                    colour: Color.fromARGB(255, 255, 138, 101),
+                    section: 'Variable Expenses'),
+                SizedBox(
                   height: 10,
                 ),
-                Container(
-                  height: 50,
-                  color: Colors.brown[600],
-                  child: const Center(
-                    child: Text(
-                      'Miscelleanous Expenses',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
+                SectionTitles(
+                    colour: Color.fromARGB(255, 109, 76, 65),
+                    section: 'Miscelleanuous Expenses'),
               ],
 
               // ListTile(
@@ -381,6 +289,78 @@ class _SampleItemListViewState extends State<SampleItemListView> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class SectionTitles extends StatelessWidget {
+  const SectionTitles({Key? key, required this.colour, required this.section})
+      : super(key: key);
+
+  final String section;
+  final Color colour;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: Container(
+            height: 50,
+            color: colour,
+            child: Center(
+              child: Text(
+                section,
+                style: const TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Container(
+            height: 50,
+            color: colour,
+            child: const Center(
+              child: Text(
+                'Budget',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Container(
+            height: 50,
+            color: colour,
+            child: const Center(
+              child: Text(
+                'Actual',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Container(
+            height: 50,
+            color: colour,
+            child: const Center(
+              child: Text(
+                'Difference',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
