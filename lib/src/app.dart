@@ -57,7 +57,7 @@ class TmdBudget extends StatelessWidget {
           // preferred ThemeMode (light, dark, or system default) from the
           // SettingsController to display the correct theme.
           theme: ThemeData(
-            primaryColorLight: Colors.deepOrange[50],
+            primaryColorLight: const Color.fromARGB(255, 248, 222, 220),
           ),
           darkTheme: ThemeData.dark(),
           themeMode: settingsController.themeMode,
