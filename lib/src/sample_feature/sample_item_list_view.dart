@@ -72,7 +72,10 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                   ),
                   DropdownButton<String>(
                     value: dropdownValue,
-                    icon: const Icon(Icons.arrow_drop_down_sharp),
+                    icon: const Icon(
+                      Icons.arrow_drop_down_sharp,
+                      color: Colors.white,
+                    ),
                     iconSize: 24,
                     elevation: 16,
                     alignment: AlignmentDirectional.center,
@@ -127,33 +130,242 @@ class _SampleItemListViewState extends State<SampleItemListView> {
               // scroll position when a user leaves and returns to the app after it
               // has been killed while running in the background.
               restorationId: 'sampleItemListView',
-              children: const [
-                SectionTitles(
+              children: [
+                const SectionTitles(
                   colour: Color.fromARGB(255, 67, 160, 71),
                   section: 'Income',
                 ),
-                SizedBox(
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            'Salary',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            '£2550',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            '£2600',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            '£50',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            "Business Income",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            '£700',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            '£800',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            '£100',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
                   height: 10,
                 ),
-                SectionTitles(
+                const SectionTitles(
                     colour: Color.fromARGB(255, 0, 172, 193),
                     section: 'Fixed Expenses'),
-                SizedBox(
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            'Mortgage/Rent',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            '£500',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            '£600',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            '£-100',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.red),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            "Council Tax",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            '£70',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            '0',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            '£70',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
                   height: 10,
                 ),
-                SectionTitles(
+                const SectionTitles(
                     colour: Color.fromARGB(255, 1, 87, 155),
                     section: 'Savings'),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                SectionTitles(
+                const SectionTitles(
                     colour: Color.fromARGB(255, 255, 138, 101),
                     section: 'Variable Expenses'),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                SectionTitles(
+                const SectionTitles(
                     colour: Color.fromARGB(255, 109, 76, 65),
                     section: 'Misc. Expenses'),
               ],
