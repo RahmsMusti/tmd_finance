@@ -143,12 +143,19 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                       child: Container(
                         height: 50,
                         color: Colors.white,
-                        child: const Center(
-                          child: Text(
-                            'Salary',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.black),
+                        child: Center(
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              hintText: 'Income Type',
+                              hintStyle: TextStyle(fontSize: 10),
+                            ),
                           ),
+                          // child: Text(
+                          //   'Salary',
+                          //   textAlign: TextAlign.center,
+                          //   style: TextStyle(color: Colors.black),
+                          // ),
                         ),
                       ),
                     ),
@@ -252,9 +259,17 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                 const SizedBox(
                   height: 5,
                 ),
-                FloatingActionButton(
-                  onPressed: onPressed,
-                  child: Icon(Icons.add),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    FloatingActionButton(
+                      onPressed: onPressed,
+                      child: const Icon(Icons.add),
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                  ],
                 ),
                 const SizedBox(
                   height: 10,
@@ -377,9 +392,17 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                 const SizedBox(
                   height: 5,
                 ),
-                FloatingActionButton(
-                  onPressed: onPressed,
-                  child: Icon(Icons.add),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    FloatingActionButton(
+                      onPressed: onPressed,
+                      child: const Icon(Icons.add),
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                  ],
                 ),
                 const SizedBox(
                   height: 10,
@@ -390,9 +413,17 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                 const SizedBox(
                   height: 5,
                 ),
-                FloatingActionButton(
-                  onPressed: onPressed,
-                  child: Icon(Icons.add),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    FloatingActionButton(
+                      onPressed: onPressed,
+                      child: const Icon(Icons.add),
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                  ],
                 ),
                 const SizedBox(
                   height: 10,
@@ -403,9 +434,17 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                 const SizedBox(
                   height: 5,
                 ),
-                FloatingActionButton(
-                  onPressed: onPressed,
-                  child: Icon(Icons.add),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    FloatingActionButton(
+                      onPressed: onPressed,
+                      child: const Icon(Icons.add),
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                  ],
                 ),
                 const SizedBox(
                   height: 10,
@@ -418,7 +457,7 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                 ),
                 FloatingActionButton(
                   onPressed: onPressed,
-                  child: Icon(Icons.add),
+                  child: const Icon(Icons.add),
                 ),
                 const SizedBox(
                   height: 5,
