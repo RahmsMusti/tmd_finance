@@ -146,9 +146,10 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                         child: Center(
                           child: TextFormField(
                             decoration: const InputDecoration(
+                              contentPadding: EdgeInsets.all(22),
                               border: OutlineInputBorder(),
-                              hintText: 'Income Type',
-                              hintStyle: TextStyle(fontSize: 10),
+                              hintText: 'e.g Salary',
+                              hintStyle: TextStyle(fontSize: 15),
                             ),
                           ),
                           // child: Text(
