@@ -164,11 +164,14 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                       child: Container(
                         height: 50,
                         color: Colors.white,
-                        child: const Center(
-                          child: Text(
-                            '£2550',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.black),
+                        child: Center(
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              contentPadding: EdgeInsets.all(22),
+                              border: OutlineInputBorder(),
+                              hintText: 'e.g £2134',
+                              hintStyle: TextStyle(fontSize: 15),
+                            ),
                           ),
                         ),
                       ),
