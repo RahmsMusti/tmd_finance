@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../settings/settings_view.dart';
 import 'sample_item.dart';
 import 'package:tmd_finance/src/components/section_titles.dart';
+import 'package:tmd_finance/src/components/input_row_examples.dart';
 // import 'sample_item_details_view.dart';
 
 /// Displays a list of SampleItems.
@@ -137,128 +138,10 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                   colour: Color.fromARGB(255, 67, 160, 71),
                   section: 'Income',
                 ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.white,
-                        child: Center(
-                          child: TextFormField(
-                            decoration: const InputDecoration(
-                              contentPadding: EdgeInsets.all(22),
-                              border: OutlineInputBorder(),
-                              hintText: 'e.g Salary',
-                              hintStyle: TextStyle(fontSize: 15),
-                            ),
-                          ),
-                          // child: Text(
-                          //   'Salary',
-                          //   textAlign: TextAlign.center,
-                          //   style: TextStyle(color: Colors.black),
-                          // ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.white,
-                        child: Center(
-                          child: TextFormField(
-                            decoration: const InputDecoration(
-                              contentPadding: EdgeInsets.all(22),
-                              border: OutlineInputBorder(),
-                              hintText: 'e.g £2134',
-                              hintStyle: TextStyle(fontSize: 15),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.white,
-                        child: const Center(
-                          child: Text(
-                            '£2600',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.white,
-                        child: const Center(
-                          child: Text(
-                            '£50',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.white,
-                        child: const Center(
-                          child: Text(
-                            "Business Income",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.white,
-                        child: const Center(
-                          child: Text(
-                            '£700',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.white,
-                        child: const Center(
-                          child: Text(
-                            '£800',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.white,
-                        child: const Center(
-                          child: Text(
-                            '£100',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                const InputRowExamples(
+                  titleExample: 'Salary',
+                  budgetExample: '£2134',
+                  actualExample: '£2200',
                 ),
                 const SizedBox(
                   height: 5,
@@ -281,62 +164,10 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                 const SectionTitles(
                     colour: Color.fromARGB(255, 0, 172, 193),
                     section: 'Fixed Expenses'),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.white,
-                        child: const Center(
-                          child: Text(
-                            'Mortgage/Rent',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.white,
-                        child: const Center(
-                          child: Text(
-                            '£500',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.white,
-                        child: const Center(
-                          child: Text(
-                            '£600',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.white,
-                        child: const Center(
-                          child: Text(
-                            '£-100',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.red),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                const InputRowExamples(
+                    titleExample: 'Mortgage/Rent',
+                    budgetExample: 'e.g £500',
+                    actualExample: 'e.g £600'),
                 Row(
                   children: [
                     Expanded(
@@ -414,6 +245,10 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                 const SectionTitles(
                     colour: Color.fromARGB(255, 1, 87, 155),
                     section: 'Savings'),
+                const InputRowExamples(
+                    titleExample: 'savings',
+                    budgetExample: '£',
+                    actualExample: '£'),
                 const SizedBox(
                   height: 5,
                 ),
@@ -435,6 +270,10 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                 const SectionTitles(
                     colour: Color.fromARGB(255, 255, 138, 101),
                     section: 'Variable Expenses'),
+                const InputRowExamples(
+                    titleExample: 'Food',
+                    budgetExample: '£',
+                    actualExample: '£'),
                 const SizedBox(
                   height: 5,
                 ),
@@ -456,15 +295,24 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                 const SectionTitles(
                     colour: Color.fromARGB(255, 109, 76, 65),
                     section: 'Misc. Expenses'),
+                const InputRowExamples(
+                    titleExample: 'Presents',
+                    budgetExample: '£',
+                    actualExample: '£'),
                 const SizedBox(
                   height: 5,
                 ),
-                FloatingActionButton(
-                  onPressed: onPressed,
-                  child: const Icon(Icons.add),
-                ),
-                const SizedBox(
-                  height: 5,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    FloatingActionButton(
+                      onPressed: onPressed,
+                      child: const Icon(Icons.add),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                  ],
                 ),
               ],
 
