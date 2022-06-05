@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
 
-class InputRowExamples extends StatelessWidget {
-  const InputRowExamples(
-      {Key? key,
-      required this.titleExample,
-      required this.budgetExample,
-      required this.actualExample})
-      : super(key: key);
-
-  final String titleExample;
-  final String budgetExample;
-  final String actualExample;
+class InputRow extends StatelessWidget {
+  const InputRow({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +14,9 @@ class InputRowExamples extends StatelessWidget {
             child: Center(
               child: TextFormField(
                 textAlign: TextAlign.center,
-                decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.all(22),
-                  border: const OutlineInputBorder(),
-                  hintText: titleExample,
-                  hintStyle: const TextStyle(fontSize: 13),
+                decoration: const InputDecoration(
+                  contentPadding: EdgeInsets.all(22),
+                  border: OutlineInputBorder(),
                 ),
               ),
             ),
@@ -40,11 +29,9 @@ class InputRowExamples extends StatelessWidget {
             child: Center(
               child: TextFormField(
                 textAlign: TextAlign.center,
-                decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.all(22),
-                  border: const OutlineInputBorder(),
-                  hintText: budgetExample,
-                  hintStyle: const TextStyle(fontSize: 13),
+                decoration: const InputDecoration(
+                  contentPadding: EdgeInsets.all(22),
+                  border: OutlineInputBorder(),
                 ),
               ),
             ),
@@ -57,12 +44,9 @@ class InputRowExamples extends StatelessWidget {
             child: Center(
               child: TextFormField(
                 textAlign: TextAlign.center,
-                decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.all(22),
-                  border: const OutlineInputBorder(),
-                  hintText: actualExample,
-                  hintMaxLines: 2,
-                  hintStyle: const TextStyle(fontSize: 13),
+                decoration: const InputDecoration(
+                  contentPadding: EdgeInsets.all(22),
+                  border: OutlineInputBorder(),
                 ),
               ),
             ),

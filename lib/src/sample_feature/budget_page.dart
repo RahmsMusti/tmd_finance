@@ -4,14 +4,12 @@ import '../settings/settings_view.dart';
 import 'sample_item.dart';
 import 'package:tmd_finance/src/components/section_titles.dart';
 import 'package:tmd_finance/src/components/input_row_examples.dart';
+import 'package:tmd_finance/src/components/input_row.dart';
 // import 'sample_item_details_view.dart';
 
 /// Displays a list of SampleItems.
-class SampleItemListView extends StatefulWidget {
-  const SampleItemListView({
-    Key? key,
-    this.items = const [SampleItem(1), SampleItem(2), SampleItem(3)],
-  }) : super(key: key);
+class BudgetPage extends StatefulWidget {
+  const BudgetPage({Key? key, required this.items}) : super(key: key);
 
   static const routeName = '/';
 
@@ -33,18 +31,24 @@ class SampleItemListView extends StatefulWidget {
   ];
 
   @override
-  State<SampleItemListView> createState() => _SampleItemListViewState();
+  State<BudgetPage> createState() => _BudgetPageState();
 }
 
-class _SampleItemListViewState extends State<SampleItemListView> {
+class _BudgetPageState extends State<BudgetPage> {
   final List<Tab> myTabs = <Tab>[
     const Tab(text: 'Budget'),
     const Tab(text: 'Monthly Summary'),
   ];
 
-  String dropdownValue = SampleItemListView.months[0];
+  String dropdownValue = BudgetPage.months[0];
 
   get onPressed => null;
+
+  var incomeList = <Widget>[];
+  var fixedExpensesList = <Widget>[];
+  var savingsList = <Widget>[];
+  var variableExpensesList = <Widget>[];
+  var miscelleneousExpensesList = <Widget>[];
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +96,7 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                         dropdownValue = newValue!;
                       });
                     },
-                    items: SampleItemListView.months.map((name) {
+                    items: BudgetPage.months.map((name) {
                       return DropdownMenuItem<String>(
                         alignment: AlignmentDirectional.center,
                         value: name,
@@ -143,6 +147,9 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                   budgetExample: '£2134',
                   actualExample: '£2200',
                 ),
+                Column(
+                  children: incomeList,
+                ),
                 const SizedBox(
                   height: 5,
                 ),
@@ -150,7 +157,13 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     FloatingActionButton(
-                      onPressed: onPressed,
+                      onPressed: () {
+                        setState(() {
+                          incomeList.add(
+                            const InputRow(),
+                          );
+                        });
+                      },
                       child: const Icon(Icons.add),
                     ),
                     const SizedBox(
@@ -168,61 +181,8 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                     titleExample: 'Mortgage/Rent',
                     budgetExample: 'e.g £500',
                     actualExample: 'e.g £600'),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.white,
-                        child: const Center(
-                          child: Text(
-                            "Council Tax",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.white,
-                        child: const Center(
-                          child: Text(
-                            '£70',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.white,
-                        child: const Center(
-                          child: Text(
-                            '0',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        color: Colors.white,
-                        child: const Center(
-                          child: Text(
-                            '£70',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                Column(
+                  children: fixedExpensesList,
                 ),
                 const SizedBox(
                   height: 5,
@@ -231,7 +191,13 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     FloatingActionButton(
-                      onPressed: onPressed,
+                      onPressed: () {
+                        setState(() {
+                          fixedExpensesList.add(
+                            const InputRow(),
+                          );
+                        });
+                      },
                       child: const Icon(Icons.add),
                     ),
                     const SizedBox(
@@ -249,6 +215,9 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                     titleExample: 'savings',
                     budgetExample: '£',
                     actualExample: '£'),
+                Column(
+                  children: savingsList,
+                ),
                 const SizedBox(
                   height: 5,
                 ),
@@ -256,7 +225,13 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     FloatingActionButton(
-                      onPressed: onPressed,
+                      onPressed: () {
+                        setState(() {
+                          savingsList.add(
+                            const InputRow(),
+                          );
+                        });
+                      },
                       child: const Icon(Icons.add),
                     ),
                     const SizedBox(
@@ -274,6 +249,9 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                     titleExample: 'Food',
                     budgetExample: '£',
                     actualExample: '£'),
+                Column(
+                  children: variableExpensesList,
+                ),
                 const SizedBox(
                   height: 5,
                 ),
@@ -281,7 +259,13 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     FloatingActionButton(
-                      onPressed: onPressed,
+                      onPressed: () {
+                        setState(() {
+                          variableExpensesList.add(
+                            const InputRow(),
+                          );
+                        });
+                      },
                       child: const Icon(Icons.add),
                     ),
                     const SizedBox(
@@ -299,6 +283,9 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                     titleExample: 'Presents',
                     budgetExample: '£',
                     actualExample: '£'),
+                Column(
+                  children: miscelleneousExpensesList,
+                ),
                 const SizedBox(
                   height: 5,
                 ),
@@ -306,7 +293,13 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     FloatingActionButton(
-                      onPressed: onPressed,
+                      onPressed: () {
+                        setState(() {
+                          miscelleneousExpensesList.add(
+                            const InputRow(),
+                          );
+                        });
+                      },
                       child: const Icon(Icons.add),
                     ),
                     const SizedBox(
