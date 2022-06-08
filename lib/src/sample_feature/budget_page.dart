@@ -42,8 +42,6 @@ class _BudgetPageState extends State<BudgetPage> {
 
   String dropdownValue = BudgetPage.months[0];
 
-  get onPressed => null;
-
   var incomeList = <Widget>[];
   var fixedExpensesList = <Widget>[];
   var savingsList = <Widget>[];
