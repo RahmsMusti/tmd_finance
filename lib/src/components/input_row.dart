@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 class InputRow extends StatelessWidget {
-  const InputRow({Key? key}) : super(key: key);
+  InputRow({Key? key}) : super(key: key);
+
+  TextEditingController budgetController = TextEditingController();
+  TextEditingController actualController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +32,7 @@ class InputRow extends StatelessWidget {
             color: Colors.white,
             child: Center(
               child: TextFormField(
+                controller: budgetController,
                 textAlign: TextAlign.center,
                 decoration: const InputDecoration(
                   contentPadding: EdgeInsets.all(22),
@@ -45,6 +49,7 @@ class InputRow extends StatelessWidget {
             child: Center(
               child: TextFormField(
                 textAlign: TextAlign.center,
+                controller: actualController,
                 decoration: const InputDecoration(
                   contentPadding: EdgeInsets.all(22),
                   border: OutlineInputBorder(),
