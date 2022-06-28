@@ -1,4 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:tmd_finance/src/pages/budget_page_apr.dart';
+import 'package:tmd_finance/src/pages/budget_page_aug.dart';
+import 'package:tmd_finance/src/pages/budget_page_dec.dart';
+import 'package:tmd_finance/src/pages/budget_page_jan.dart';
+import 'package:tmd_finance/src/pages/budget_page_jul.dart';
+import 'package:tmd_finance/src/pages/budget_page_jun.dart';
+import 'package:tmd_finance/src/pages/budget_page_mar.dart';
+import 'package:tmd_finance/src/pages/budget_page_may.dart';
+import 'package:tmd_finance/src/pages/budget_page_nov.dart';
+import 'package:tmd_finance/src/pages/budget_page_oct.dart';
+import 'package:tmd_finance/src/pages/budget_page_sep.dart';
 
 import '../settings/settings_view.dart';
 import '../sample_feature/sample_item.dart';
@@ -8,10 +19,10 @@ import 'package:tmd_finance/src/components/input_row.dart';
 // import 'sample_item_details_view.dart';
 
 /// Displays a list of SampleItems.
-class BudgetPage extends StatefulWidget {
-  const BudgetPage({Key? key, required this.items}) : super(key: key);
+class BudgetPageFeb extends StatefulWidget {
+  const BudgetPageFeb({Key? key, required this.items}) : super(key: key);
 
-  static const routeName = '/';
+  static const routeName = '/feb';
 
   final List<SampleItem> items;
 
@@ -31,16 +42,16 @@ class BudgetPage extends StatefulWidget {
   ];
 
   @override
-  State<BudgetPage> createState() => _BudgetPageState();
+  State<BudgetPageFeb> createState() => _BudgetPageFebState();
 }
 
-class _BudgetPageState extends State<BudgetPage> {
+class _BudgetPageFebState extends State<BudgetPageFeb> {
   final List<Tab> myTabs = <Tab>[
     const Tab(text: 'Budget'),
     const Tab(text: 'Monthly Summary'),
   ];
 
-  String dropdownValue = BudgetPage.months[0];
+  String dropdownValue = BudgetPageFeb.months[1];
 
   var incomeList = <Widget>[];
   var fixedExpensesList = <Widget>[];
@@ -91,12 +102,105 @@ class _BudgetPageState extends State<BudgetPage> {
                         fontWeight: FontWeight.w500,
                         color: Colors.white),
                     dropdownColor: Colors.grey,
-                    onChanged: (String? newValue) {
-                      setState(() {
-                        dropdownValue = newValue!;
-                      });
+                    onChanged: (String? value) {
+                      dropdownValue = value!;
+                      switch (value) {
+                        case "January":
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const BudgetPageJan(items: [])),
+                          );
+                          break;
+                        case "March":
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const BudgetPageMar(items: [])),
+                          );
+                          break;
+                        case "April":
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const BudgetPageApr(items: [])),
+                          );
+                          break;
+                        case "May":
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const BudgetPageMay(items: [])),
+                          );
+                          break;
+                        case "June":
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const BudgetPageJun(items: [])),
+                          );
+                          break;
+                        case "July":
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const BudgetPageJul(items: [])),
+                          );
+                          break;
+                        case "August":
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const BudgetPageAug(items: [])),
+                          );
+                          break;
+                        case "September":
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const BudgetPageSep(items: [])),
+                          );
+                          break;
+                        case "October":
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const BudgetPageOct(items: [])),
+                          );
+                          break;
+                        case "November":
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const BudgetPageNov(items: [])),
+                          );
+                          break;
+                        case "December":
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const BudgetPageDec(items: [])),
+                          );
+                          break;
+                      }
                     },
-                    items: BudgetPage.months.map((name) {
+                    // (String? newValue) {
+                    //   setState(() {
+                    //     dropdownValue = newValue!;
+                    //   });
+                    // },
+                    items: BudgetPageFeb.months.map((name) {
                       return DropdownMenuItem<String>(
                         alignment: AlignmentDirectional.center,
                         value: name,

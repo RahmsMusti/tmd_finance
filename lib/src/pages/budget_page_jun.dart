@@ -8,10 +8,10 @@ import 'package:tmd_finance/src/components/input_row.dart';
 // import 'sample_item_details_view.dart';
 
 /// Displays a list of SampleItems.
-class BudgetPage extends StatefulWidget {
-  const BudgetPage({Key? key, required this.items}) : super(key: key);
+class BudgetPageJun extends StatefulWidget {
+  const BudgetPageJun({Key? key, required this.items}) : super(key: key);
 
-  static const routeName = '/';
+  static const routeName = '/jun';
 
   final List<SampleItem> items;
 
@@ -31,16 +31,16 @@ class BudgetPage extends StatefulWidget {
   ];
 
   @override
-  State<BudgetPage> createState() => _BudgetPageState();
+  State<BudgetPageJun> createState() => _BudgetPageJunState();
 }
 
-class _BudgetPageState extends State<BudgetPage> {
+class _BudgetPageJunState extends State<BudgetPageJun> {
   final List<Tab> myTabs = <Tab>[
     const Tab(text: 'Budget'),
     const Tab(text: 'Monthly Summary'),
   ];
 
-  String dropdownValue = BudgetPage.months[0];
+  String dropdownValue = BudgetPageJun.months[5];
 
   var incomeList = <Widget>[];
   var fixedExpensesList = <Widget>[];
@@ -96,7 +96,7 @@ class _BudgetPageState extends State<BudgetPage> {
                         dropdownValue = newValue!;
                       });
                     },
-                    items: BudgetPage.months.map((name) {
+                    items: BudgetPageJun.months.map((name) {
                       return DropdownMenuItem<String>(
                         alignment: AlignmentDirectional.center,
                         value: name,
