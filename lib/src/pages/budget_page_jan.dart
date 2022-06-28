@@ -260,7 +260,7 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    FloatingActionButton(
+                    FloatingActionButton.extended(
                       onPressed: () {
                         setState(() {
                           incomeList.add(
@@ -268,19 +268,22 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                           );
                         });
                       },
-                      child: const Icon(Icons.add),
+                      backgroundColor: const Color.fromARGB(255, 67, 160, 71),
+                      label: const Text('Add Income'),
+                      icon: const Icon(Icons.add),
                     ),
                     const SizedBox(
                       width: 5,
                     ),
-                    FloatingActionButton(
+                    FloatingActionButton.extended(
                       backgroundColor: Colors.red,
                       onPressed: () {
                         setState(() {
                           incomeList.removeLast();
                         });
                       },
-                      child: const Icon(Icons.remove),
+                      label: const Text('Remove Income'),
+                      icon: const Icon(Icons.remove),
                     ),
                     const SizedBox(
                       width: 5,
@@ -306,7 +309,7 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    FloatingActionButton(
+                    FloatingActionButton.extended(
                       onPressed: () {
                         setState(() {
                           fixedExpensesList.add(
@@ -314,7 +317,9 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                           );
                         });
                       },
-                      child: const Icon(Icons.add),
+                      backgroundColor: const Color.fromARGB(255, 0, 172, 193),
+                      label: const Text('Add Income'),
+                      icon: const Icon(Icons.add),
                     ),
                     const SizedBox(
                       width: 5,
