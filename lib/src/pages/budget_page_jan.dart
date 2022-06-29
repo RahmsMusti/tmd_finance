@@ -106,12 +106,7 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                       dropdownValue = value!;
                       switch (value) {
                         case "February":
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const BudgetPageFeb(items: [])),
-                          );
+                          Navigator.pushNamed(context, '/feb');
                           break;
                         case "March":
                           Navigator.push(
@@ -260,7 +255,7 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    FloatingActionButton.extended(
+                    FloatingActionButton(
                       onPressed: () {
                         setState(() {
                           incomeList.add(
@@ -268,22 +263,19 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                           );
                         });
                       },
-                      backgroundColor: const Color.fromARGB(255, 67, 160, 71),
-                      label: const Text('Add Income'),
-                      icon: const Icon(Icons.add),
+                      child: const Icon(Icons.add),
                     ),
                     const SizedBox(
                       width: 5,
                     ),
-                    FloatingActionButton.extended(
+                    FloatingActionButton(
                       backgroundColor: Colors.red,
                       onPressed: () {
                         setState(() {
                           incomeList.removeLast();
                         });
                       },
-                      label: const Text('Remove Income'),
-                      icon: const Icon(Icons.remove),
+                      child: const Icon(Icons.remove),
                     ),
                     const SizedBox(
                       width: 5,
@@ -309,7 +301,7 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    FloatingActionButton.extended(
+                    FloatingActionButton(
                       onPressed: () {
                         setState(() {
                           fixedExpensesList.add(
@@ -317,9 +309,7 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                           );
                         });
                       },
-                      backgroundColor: const Color.fromARGB(255, 0, 172, 193),
-                      label: const Text('Add Income'),
-                      icon: const Icon(Icons.add),
+                      child: const Icon(Icons.add),
                     ),
                     const SizedBox(
                       width: 5,
@@ -345,9 +335,10 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                     colour: Color.fromARGB(255, 1, 87, 155),
                     section: 'Savings'),
                 const InputRowExamples(
-                    titleExample: 'savings',
-                    budgetExample: '£',
-                    actualExample: '£'),
+                  titleExample: 'savings',
+                  budgetExample: '£',
+                  actualExample: '£',
+                ),
                 Column(
                   children: savingsList,
                 ),

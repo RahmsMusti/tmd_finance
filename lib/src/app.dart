@@ -83,54 +83,30 @@ class TmdBudget extends StatelessWidget {
                   case SampleItemDetailsView.routeName:
                     return const SampleItemDetailsView();
                   case BudgetPageDec.routeName:
-                    return const BudgetPageDec(
-                      items: [],
-                    );
+                    return const BudgetPageDec(items: []);
                   case BudgetPageNov.routeName:
-                    return const BudgetPageNov(
-                      items: [],
-                    );
+                    return const BudgetPageNov(items: []);
                   case BudgetPageOct.routeName:
-                    return const BudgetPageOct(
-                      items: [],
-                    );
+                    return const BudgetPageOct(items: []);
                   case BudgetPageSep.routeName:
-                    return const BudgetPageSep(
-                      items: [],
-                    );
+                    return const BudgetPageSep(items: []);
                   case BudgetPageAug.routeName:
-                    return const BudgetPageAug(
-                      items: [],
-                    );
+                    return const BudgetPageAug(items: []);
                   case BudgetPageJul.routeName:
-                    return const BudgetPageJul(
-                      items: [],
-                    );
+                    return const BudgetPageJul(items: []);
                   case BudgetPageJun.routeName:
-                    return const BudgetPageJun(
-                      items: [],
-                    );
+                    return const BudgetPageJun(items: []);
                   case BudgetPageMay.routeName:
-                    return const BudgetPageMay(
-                      items: [],
-                    );
+                    return const BudgetPageMay(items: []);
                   case BudgetPageApr.routeName:
-                    return const BudgetPageApr(
-                      items: [],
-                    );
+                    return const BudgetPageApr(items: []);
                   case BudgetPageMar.routeName:
-                    return const BudgetPageMar(
-                      items: [],
-                    );
+                    return const BudgetPageMar(items: []);
                   case BudgetPageFeb.routeName:
-                    return const BudgetPageFeb(
-                      items: [],
-                    );
+                    return const BudgetPageFeb(items: []);
                   case BudgetPageJan.routeName:
                   default:
-                    return const BudgetPageJan(
-                      items: [],
-                    );
+                    return const BudgetPageJan(items: []);
                 }
               },
             );

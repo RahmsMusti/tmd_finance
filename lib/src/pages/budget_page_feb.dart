@@ -106,12 +106,7 @@ class _BudgetPageFebState extends State<BudgetPageFeb> {
                       dropdownValue = value!;
                       switch (value) {
                         case "January":
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const BudgetPageJan(items: [])),
-                          );
+                          Navigator.pushNamed(context, '/');
                           break;
                         case "March":
                           Navigator.push(
