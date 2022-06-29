@@ -202,7 +202,7 @@ class _BudgetPageState extends State<BudgetPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    FloatingActionButton(
+                    FloatingActionButton.extended(
                       onPressed: () {
                         setState(() {
                           fixedExpensesList.add(
@@ -210,7 +210,9 @@ class _BudgetPageState extends State<BudgetPage> {
                           );
                         });
                       },
-                      child: const Icon(Icons.add),
+                      backgroundColor: const Color.fromARGB(255, 0, 172, 193),
+                      label: const Text('Add Income'),
+                      icon: const Icon(Icons.add),
                     ),
                     const SizedBox(
                       width: 5,
