@@ -91,11 +91,49 @@ class _BudgetPageMarState extends State<BudgetPageMar> {
                         fontWeight: FontWeight.w500,
                         color: Colors.white),
                     dropdownColor: Colors.grey,
-                    onChanged: (String? newValue) {
-                      setState(() {
-                        dropdownValue = newValue!;
-                      });
+                    onChanged: (String? value) {
+                      dropdownValue = value!;
+                      switch (value) {
+                        case "January":
+                          Navigator.restorablePushNamed(context, '/');
+                          break;
+                        case "February":
+                          Navigator.restorablePushNamed(context, '/feb');
+                          break;
+                        case "April":
+                          Navigator.restorablePushNamed(context, '/apr');
+                          break;
+                        case "May":
+                          Navigator.restorablePushNamed(context, '/may');
+                          break;
+                        case "June":
+                          Navigator.restorablePushNamed(context, '/jun');
+                          break;
+                        case "July":
+                          Navigator.restorablePushNamed(context, '/jul');
+                          break;
+                        case "August":
+                          Navigator.restorablePushNamed(context, '/Aug');
+                          break;
+                        case "September":
+                          Navigator.restorablePushNamed(context, '/sep');
+                          break;
+                        case "October":
+                          Navigator.restorablePushNamed(context, '/oct');
+                          break;
+                        case "November":
+                          Navigator.restorablePushNamed(context, '/nov');
+                          break;
+                        case "December":
+                          Navigator.restorablePushNamed(context, '/dec');
+                          break;
+                      }
                     },
+                    // (String? newValue) {
+                    //   setState(() {
+                    //     dropdownValue = newValue!;
+                    //   });
+                    // },
                     items: BudgetPageMar.months.map((name) {
                       return DropdownMenuItem<String>(
                         alignment: AlignmentDirectional.center,

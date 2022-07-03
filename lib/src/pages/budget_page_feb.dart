@@ -1,15 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tmd_finance/src/pages/budget_page_apr.dart';
-import 'package:tmd_finance/src/pages/budget_page_aug.dart';
-import 'package:tmd_finance/src/pages/budget_page_dec.dart';
-import 'package:tmd_finance/src/pages/budget_page_jan.dart';
-import 'package:tmd_finance/src/pages/budget_page_jul.dart';
-import 'package:tmd_finance/src/pages/budget_page_jun.dart';
-import 'package:tmd_finance/src/pages/budget_page_mar.dart';
-import 'package:tmd_finance/src/pages/budget_page_may.dart';
-import 'package:tmd_finance/src/pages/budget_page_nov.dart';
-import 'package:tmd_finance/src/pages/budget_page_oct.dart';
-import 'package:tmd_finance/src/pages/budget_page_sep.dart';
 
 import '../settings/settings_view.dart';
 import '../sample_feature/sample_item.dart';
@@ -106,87 +95,37 @@ class _BudgetPageFebState extends State<BudgetPageFeb> {
                       dropdownValue = value!;
                       switch (value) {
                         case "January":
-                          Navigator.pushNamed(context, '/');
+                          Navigator.restorablePushNamed(context, '/');
                           break;
                         case "March":
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const BudgetPageMar(items: [])),
-                          );
+                          Navigator.restorablePushNamed(context, '/mar');
                           break;
                         case "April":
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const BudgetPageApr(items: [])),
-                          );
+                          Navigator.restorablePushNamed(context, '/apr');
                           break;
                         case "May":
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const BudgetPageMay(items: [])),
-                          );
+                          Navigator.restorablePushNamed(context, '/may');
                           break;
                         case "June":
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const BudgetPageJun(items: [])),
-                          );
+                          Navigator.restorablePushNamed(context, '/jun');
                           break;
                         case "July":
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const BudgetPageJul(items: [])),
-                          );
+                          Navigator.restorablePushNamed(context, '/jul');
                           break;
                         case "August":
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const BudgetPageAug(items: [])),
-                          );
+                          Navigator.restorablePushNamed(context, '/Aug');
                           break;
                         case "September":
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const BudgetPageSep(items: [])),
-                          );
+                          Navigator.restorablePushNamed(context, '/sep');
                           break;
                         case "October":
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const BudgetPageOct(items: [])),
-                          );
+                          Navigator.restorablePushNamed(context, '/oct');
                           break;
                         case "November":
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const BudgetPageNov(items: [])),
-                          );
+                          Navigator.restorablePushNamed(context, '/nov');
                           break;
                         case "December":
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const BudgetPageDec(items: [])),
-                          );
+                          Navigator.restorablePushNamed(context, '/dec');
                           break;
                       }
                     },
