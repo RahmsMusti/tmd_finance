@@ -156,7 +156,7 @@ class _BudgetPageState extends State<BudgetPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    FloatingActionButton(
+                    FloatingActionButton.extended(
                       onPressed: () {
                         setState(() {
                           incomeList.add(
@@ -164,7 +164,9 @@ class _BudgetPageState extends State<BudgetPage> {
                           );
                         });
                       },
-                      child: const Icon(Icons.add),
+                      backgroundColor: const Color.fromARGB(255, 67, 160, 71),
+                      label: const Text('Add Income'),
+                      icon: const Icon(Icons.add),
                     ),
                     const SizedBox(
                       width: 5,
@@ -211,7 +213,7 @@ class _BudgetPageState extends State<BudgetPage> {
                         });
                       },
                       backgroundColor: const Color.fromARGB(255, 0, 172, 193),
-                      label: const Text('Add Income'),
+                      label: const Text('Add Expense'),
                       icon: const Icon(Icons.add),
                     ),
                     const SizedBox(
@@ -250,7 +252,7 @@ class _BudgetPageState extends State<BudgetPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    FloatingActionButton(
+                    FloatingActionButton.extended(
                       onPressed: () {
                         setState(() {
                           savingsList.add(
@@ -258,7 +260,9 @@ class _BudgetPageState extends State<BudgetPage> {
                           );
                         });
                       },
-                      child: const Icon(Icons.add),
+                      backgroundColor: const Color.fromARGB(255, 1, 87, 155),
+                      label: const Text('Add Savings'),
+                      icon: const Icon(Icons.add),
                     ),
                     const SizedBox(
                       width: 5,
@@ -296,7 +300,7 @@ class _BudgetPageState extends State<BudgetPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    FloatingActionButton(
+                    FloatingActionButton.extended(
                       onPressed: () {
                         setState(() {
                           variableExpensesList.add(
@@ -304,7 +308,9 @@ class _BudgetPageState extends State<BudgetPage> {
                           );
                         });
                       },
-                      child: const Icon(Icons.add),
+                      backgroundColor: Color.fromARGB(255, 255, 138, 101),
+                      label: const Text('Add Expense'),
+                      icon: const Icon(Icons.add),
                     ),
                     const SizedBox(
                       width: 5,
@@ -342,7 +348,7 @@ class _BudgetPageState extends State<BudgetPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    FloatingActionButton(
+                    FloatingActionButton.extended(
                       onPressed: () {
                         setState(() {
                           miscelleneousExpensesList.add(
@@ -350,7 +356,9 @@ class _BudgetPageState extends State<BudgetPage> {
                           );
                         });
                       },
-                      child: const Icon(Icons.add),
+                      backgroundColor: Color.fromARGB(255, 109, 76, 65),
+                      label: const Text('Add Expense'),
+                      icon: const Icon(Icons.add),
                     ),
                     const SizedBox(
                       width: 5,
