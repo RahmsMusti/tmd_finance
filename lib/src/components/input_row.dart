@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 class InputRow extends StatelessWidget {
   InputRow({Key? key}) : super(key: key);
 
-  TextEditingController budgetController = TextEditingController();
-  TextEditingController actualController = TextEditingController();
+  final TextEditingController budgetController = TextEditingController();
+  final TextEditingController actualController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
