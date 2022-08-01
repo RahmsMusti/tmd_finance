@@ -11,7 +11,7 @@ import 'package:tmd_finance/src/components/input_row.dart';
 class BudgetPage extends StatefulWidget {
   const BudgetPage({Key? key, required this.items}) : super(key: key);
 
-  static const routeName = '/';
+  static const routeName = 'feb';
 
   final List<SampleItem> items;
 
@@ -308,7 +308,7 @@ class _BudgetPageState extends State<BudgetPage> {
                           );
                         });
                       },
-                      backgroundColor: Color.fromARGB(255, 255, 138, 101),
+                      backgroundColor: const Color.fromARGB(255, 255, 138, 101),
                       label: const Text('Add Expense'),
                       icon: const Icon(Icons.add),
                     ),
@@ -356,7 +356,7 @@ class _BudgetPageState extends State<BudgetPage> {
                           );
                         });
                       },
-                      backgroundColor: Color.fromARGB(255, 109, 76, 65),
+                      backgroundColor: const Color.fromARGB(255, 109, 76, 65),
                       label: const Text('Add Expense'),
                       icon: const Icon(Icons.add),
                     ),
