@@ -5,42 +5,26 @@ import '../sample_feature/sample_item.dart';
 import 'package:tmd_finance/src/components/section_titles.dart';
 import 'package:tmd_finance/src/components/input_row_examples.dart';
 import 'package:tmd_finance/src/components/input_row.dart';
+import 'package:tmd_finance/src/components/navigation_drawer.dart';
 // import 'sample_item_details_view.dart';
 
 /// Displays a list of SampleItems.
-class BudgetPage extends StatefulWidget {
-  const BudgetPage({Key? key, required this.items}) : super(key: key);
+class BudgetPageFeb extends StatefulWidget {
+  const BudgetPageFeb({Key? key, required this.items}) : super(key: key);
 
   static const routeName = 'feb';
 
   final List<SampleItem> items;
 
-  static const List<String> months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
-
   @override
-  State<BudgetPage> createState() => _BudgetPageState();
+  State<BudgetPageFeb> createState() => _BudgetPageState();
 }
 
-class _BudgetPageState extends State<BudgetPage> {
+class _BudgetPageState extends State<BudgetPageFeb> {
   final List<Tab> myTabs = <Tab>[
     const Tab(text: 'Budget'),
     const Tab(text: 'Monthly Summary'),
   ];
-
-  String dropdownValue = BudgetPage.months[0];
 
   var incomeList = <Widget>[];
   var fixedExpensesList = <Widget>[];
@@ -53,7 +37,22 @@ class _BudgetPageState extends State<BudgetPage> {
     return DefaultTabController(
       length: myTabs.length,
       child: Scaffold(
+        drawer: const Drawer(
+          child: NavigationDrawer(),
+        ),
         appBar: AppBar(
+          leading: Builder(
+            builder: (BuildContext context) {
+              return IconButton(
+                icon: const Icon(Icons.edit_calendar),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+              );
+            },
+          ),
+          centerTitle: true,
           title: Column(
             children: [
               const SizedBox(
@@ -62,50 +61,30 @@ class _BudgetPageState extends State<BudgetPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  SizedBox(
-                    width: 20,
-                  ),
+                  // SizedBox(
+                  //   width: 20,
+                  // ),
                   Text(
                     'tmd: budget',
                     textAlign: TextAlign.center,
                   ),
                 ],
               ),
+              const SizedBox(
+                height: 10,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const SizedBox(
-                    width: 30,
-                  ),
-                  DropdownButton<String>(
-                    value: dropdownValue,
-                    icon: const Icon(
-                      Icons.arrow_drop_down_sharp,
-                      color: Colors.white,
-                    ),
-                    iconSize: 24,
-                    elevation: 16,
-                    alignment: AlignmentDirectional.center,
-                    style: const TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white),
-                    dropdownColor: Colors.grey,
-                    onChanged: (String? newValue) {
-                      setState(() {
-                        dropdownValue = newValue!;
-                      });
-                    },
-                    items: BudgetPage.months.map((name) {
-                      return DropdownMenuItem<String>(
-                        alignment: AlignmentDirectional.center,
-                        value: name,
-                        child: Text(name),
-                      );
-                    }).toList(),
-                  ),
+                children: const [
+                  Text(
+                    'February',
+                    style: TextStyle(fontSize: 15.0),
+                  )
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 5,
+              ),
             ],
           ),
           bottom: TabBar(
@@ -378,22 +357,6 @@ class _BudgetPageState extends State<BudgetPage> {
                   ],
                 ),
               ],
-
-              // ListTile(
-              //     title: Text('SampleItem ${item.id}'),
-              //     leading: const CircleAvatar(
-              //       // Display the Flutter Logo image asset.
-              //       foregroundImage: AssetImage('assets/images/flutter_logo.png'),
-              //     ),
-              //     onTap: () {
-              //       // Navigate to the details page. If the user leaves and returns to
-              //       // the app after it has been killed while running in the
-              //       // background, the navigation stack is restored.
-              //       Navigator.restorablePushNamed(
-              //         context,
-              //         SampleItemDetailsView.routeName,
-              //       );
-              //     });
             ),
             ListView(
               // Providing a restorationId allows the ListView to restore the

@@ -9,18 +9,18 @@ import 'package:tmd_finance/src/components/navigation_drawer.dart';
 // import 'sample_item_details_view.dart';
 
 /// Displays a list of SampleItems.
-class BudgetPage extends StatefulWidget {
-  const BudgetPage({Key? key, required this.items}) : super(key: key);
+class BudgetPageJan extends StatefulWidget {
+  const BudgetPageJan({Key? key, required this.items}) : super(key: key);
 
   static const routeName = '/';
 
   final List<SampleItem> items;
 
   @override
-  State<BudgetPage> createState() => _BudgetPageState();
+  State<BudgetPageJan> createState() => _BudgetPageJanState();
 }
 
-class _BudgetPageState extends State<BudgetPage> {
+class _BudgetPageJanState extends State<BudgetPageJan> {
   final List<Tab> myTabs = <Tab>[
     const Tab(text: 'Budget'),
     const Tab(text: 'Monthly Summary'),
@@ -37,7 +37,9 @@ class _BudgetPageState extends State<BudgetPage> {
     return DefaultTabController(
       length: myTabs.length,
       child: Scaffold(
-        drawer: const Drawer(child: NavigationDrawer()),
+        drawer: const Drawer(
+          child: NavigationDrawer(),
+        ),
         appBar: AppBar(
           leading: Builder(
             builder: (BuildContext context) {
@@ -50,6 +52,7 @@ class _BudgetPageState extends State<BudgetPage> {
               );
             },
           ),
+          centerTitle: true,
           title: Column(
             children: [
               const SizedBox(
@@ -354,22 +357,6 @@ class _BudgetPageState extends State<BudgetPage> {
                   ],
                 ),
               ],
-
-              // ListTile(
-              //     title: Text('SampleItem ${item.id}'),
-              //     leading: const CircleAvatar(
-              //       // Display the Flutter Logo image asset.
-              //       foregroundImage: AssetImage('assets/images/flutter_logo.png'),
-              //     ),
-              //     onTap: () {
-              //       // Navigate to the details page. If the user leaves and returns to
-              //       // the app after it has been killed while running in the
-              //       // background, the navigation stack is restored.
-              //       Navigator.restorablePushNamed(
-              //         context,
-              //         SampleItemDetailsView.routeName,
-              //       );
-              //     });
             ),
             ListView(
               // Providing a restorationId allows the ListView to restore the

@@ -17,10 +17,12 @@ class NavigationDrawer extends StatelessWidget {
       );
 
   Widget buildHeader(BuildContext context) => Container(
+        color: Colors.blue,
         padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
       );
 
   Widget buildMenuItems(BuildContext context) => Container(
+        color: Colors.blue,
         padding: const EdgeInsets.all(24),
         child: Column(
           children: [
@@ -28,64 +30,88 @@ class NavigationDrawer extends StatelessWidget {
               leading: const Icon(Icons.calendar_month),
               title: const Text('January'),
               onTap: () => Navigator.of(context).pushNamed('/'),
+              iconColor: Colors.white,
+              textColor: Colors.white,
             ),
             ListTile(
               leading: const Icon(Icons.calendar_month),
+              iconColor: Colors.white,
               title: const Text('February'),
-              onTap: () {},
+              textColor: Colors.white,
+              onTap: () => Navigator.of(context).pushNamed('feb'),
             ),
             ListTile(
               leading: const Icon(Icons.calendar_month),
               title: const Text('March'),
-              onTap: () {},
+              onTap: () => Navigator.of(context).pushNamed('mar'),
+              iconColor: Colors.white,
+              textColor: Colors.white,
             ),
             ListTile(
               leading: const Icon(Icons.calendar_month),
               title: const Text('April'),
-              onTap: () {},
+              onTap: () => Navigator.of(context).pushNamed('apr'),
+              iconColor: Colors.white,
+              textColor: Colors.white,
             ),
             ListTile(
               leading: const Icon(Icons.calendar_month),
               title: const Text('May'),
-              onTap: () {},
+              onTap: () => Navigator.of(context).pushNamed('may'),
+              iconColor: Colors.white,
+              textColor: Colors.white,
             ),
             ListTile(
               leading: const Icon(Icons.calendar_month),
               title: const Text('June'),
-              onTap: () {},
+              onTap: () => Navigator.of(context).pushNamed('jun'),
+              iconColor: Colors.white,
+              textColor: Colors.white,
             ),
             ListTile(
               leading: const Icon(Icons.calendar_month),
               title: const Text('July'),
-              onTap: () {},
+              onTap: () => Navigator.of(context).pushNamed('jul'),
+              iconColor: Colors.white,
+              textColor: Colors.white,
             ),
             ListTile(
               leading: const Icon(Icons.calendar_month),
               title: const Text('August'),
-              onTap: () {},
+              onTap: () => Navigator.of(context).pushNamed('aug'),
+              iconColor: Colors.white,
+              textColor: Colors.white,
             ),
             ListTile(
               leading: const Icon(Icons.calendar_month),
               title: const Text('September'),
-              onTap: () {},
+              onTap: () => Navigator.of(context).pushNamed('sep'),
+              iconColor: Colors.white,
+              textColor: Colors.white,
             ),
             ListTile(
               leading: const Icon(Icons.calendar_month),
               title: const Text('October'),
-              onTap: () {},
+              onTap: () => Navigator.of(context).pushNamed('oct'),
+              iconColor: Colors.white,
+              textColor: Colors.white,
             ),
             ListTile(
               leading: const Icon(Icons.calendar_month),
               title: const Text('November'),
-              onTap: () {},
+              onTap: () => Navigator.of(context).pushNamed('nov'),
+              iconColor: Colors.white,
+              textColor: Colors.white,
             ),
             ListTile(
               leading: const Icon(Icons.calendar_month),
               title: const Text('December'),
-              onTap: () {},
+              onTap: () => Navigator.of(context).pushNamed('dec'),
+              iconColor: Colors.white,
+              textColor: Colors.white,
             ),
             const Divider(
-              color: Colors.black,
+              color: Colors.white,
             )
           ],
         ),
