@@ -1,10 +1,34 @@
 import 'package:flutter/material.dart';
 
-class InputRow extends StatelessWidget {
-  InputRow({Key? key}) : super(key: key);
+class InputRow extends StatefulWidget {
+  InputRow(
+      {Key? key, this.titleExample, this.budgetExample, this.actualExample})
+      : super(key: key);
 
-  final TextEditingController budgetController = TextEditingController();
-  final TextEditingController actualController = TextEditingController();
+  String? titleExample;
+  String? budgetExample;
+  String? actualExample;
+
+  @override
+  State<InputRow> createState() => _InputRowState();
+}
+
+class _InputRowState extends State<InputRow> {
+  TextEditingController budgetController = TextEditingController();
+  TextEditingController actualController = TextEditingController();
+  TextEditingController titleController = TextEditingController();
+
+  double difference = 0;
+  double budget = 0;
+  double actual = 0;
+
+  findDifference() {
+    setState(() {
+      budget = double.parse(budgetController.text);
+      actual = double.parse(actualController.text);
+      difference = budget - actual;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +40,14 @@ class InputRow extends StatelessWidget {
             color: Colors.white,
             child: Center(
               child: TextFormField(
+                style: const TextStyle(fontSize: 13),
+                controller: titleController,
                 textAlign: TextAlign.center,
                 decoration: const InputDecoration(
                   contentPadding: EdgeInsets.all(22),
                   border: OutlineInputBorder(),
+                  // hintText: titleExample,
+                  // hintStyle: const TextStyle(fontSize: 13),
                 ),
               ),
             ),
@@ -31,7 +59,18 @@ class InputRow extends StatelessWidget {
             color: Colors.white,
             child: Center(
               child: TextFormField(
+                style: const TextStyle(fontSize: 13),
+                keyboardType: TextInputType.number,
                 controller: budgetController,
+                onChanged: ((value) {
+                  if (value.isEmpty) {
+                    setState(() => budget = 0);
+                  } else {
+                    setState(() {
+                      findDifference();
+                    });
+                  }
+                }),
                 textAlign: TextAlign.center,
                 decoration: const InputDecoration(
                   contentPadding: EdgeInsets.all(22),
@@ -47,8 +86,19 @@ class InputRow extends StatelessWidget {
             color: Colors.white,
             child: Center(
               child: TextFormField(
+                style: const TextStyle(fontSize: 13),
+                keyboardType: TextInputType.number,
                 textAlign: TextAlign.center,
                 controller: actualController,
+                onChanged: ((value) {
+                  if (value.isEmpty) {
+                    setState(() => actual = 0);
+                  } else {
+                    setState(() {
+                      findDifference();
+                    });
+                  }
+                }),
                 decoration: const InputDecoration(
                   contentPadding: EdgeInsets.all(22),
                   border: OutlineInputBorder(),
@@ -61,11 +111,14 @@ class InputRow extends StatelessWidget {
           child: Container(
             height: 50,
             color: Colors.white,
-            child: const Center(
+            child: Center(
               child: Text(
-                '£50',
+                '£${difference.toInt()}',
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.black),
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 13,
+                ),
               ),
             ),
           ),

@@ -218,10 +218,11 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                 const SectionTitles(
                     colour: Color.fromARGB(255, 1, 87, 155),
                     section: 'Savings'),
-                const InputRowExamples(
-                    titleExample: 'savings',
-                    budgetExample: '£',
-                    actualExample: '£'),
+                // const InputRowExamples(
+                //   titleExample: 'savings',
+                //   budgetExample: '£',
+                //   actualExample: '£',
+                // ),
                 Column(
                   children: savingsList,
                 ),
@@ -266,10 +267,11 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                 const SectionTitles(
                     colour: Color.fromARGB(255, 255, 138, 101),
                     section: 'Variable Expenses'),
-                const InputRowExamples(
-                    titleExample: 'Food',
-                    budgetExample: '£',
-                    actualExample: '£'),
+                // const InputRowExamples(
+                //   titleExample: 'Food',
+                //   budgetExample: '£',
+                //   actualExample: '£',
+                // ),
                 Column(
                   children: variableExpensesList,
                 ),
@@ -314,10 +316,11 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                 const SectionTitles(
                     colour: Color.fromARGB(255, 109, 76, 65),
                     section: 'Misc. Expenses'),
-                const InputRowExamples(
-                    titleExample: 'Presents',
-                    budgetExample: '£',
-                    actualExample: '£'),
+                // const InputRowExamples(
+                //   titleExample: 'Presents',
+                //   budgetExample: '£',
+                //   actualExample: '£',
+                // ),
                 Column(
                   children: miscelleneousExpensesList,
                 ),
