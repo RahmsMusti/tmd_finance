@@ -4,7 +4,6 @@ import '../settings/settings_view.dart';
 import '../sample_feature/sample_item.dart';
 import 'package:tmd_finance/src/components/section_titles.dart';
 import 'package:tmd_finance/src/components/input_row_examples.dart';
-import 'package:tmd_finance/src/components/input_row.dart';
 import 'package:tmd_finance/src/components/navigation_drawer.dart';
 // import 'sample_item_details_view.dart';
 
@@ -139,7 +138,7 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                       onPressed: () {
                         setState(() {
                           incomeList.add(
-                            InputRow(),
+                            const InputRowExamples(),
                           );
                         });
                       },
@@ -187,7 +186,7 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                       onPressed: () {
                         setState(() {
                           fixedExpensesList.add(
-                            InputRow(),
+                            const InputRowExamples(),
                           );
                         });
                       },
@@ -236,7 +235,7 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                       onPressed: () {
                         setState(() {
                           savingsList.add(
-                            InputRow(),
+                            const InputRowExamples(),
                           );
                         });
                       },
@@ -285,7 +284,7 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                       onPressed: () {
                         setState(() {
                           variableExpensesList.add(
-                            InputRow(),
+                            const InputRowExamples(),
                           );
                         });
                       },
@@ -334,7 +333,7 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                       onPressed: () {
                         setState(() {
                           miscelleneousExpensesList.add(
-                            InputRow(),
+                            const InputRowExamples(),
                           );
                         });
                       },

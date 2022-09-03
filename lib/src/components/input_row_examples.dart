@@ -29,7 +29,7 @@ class _InputRowExamplesState extends State<InputRowExamples> {
     setState(() {
       budget = double.parse(budgetController.text);
       actual = double.parse(actualController.text);
-      difference = budget - actual;
+      difference = actual - budget;
     });
   }
 
@@ -119,11 +119,14 @@ class _InputRowExamplesState extends State<InputRowExamples> {
           child: Container(
             height: 50,
             color: Colors.white,
-            child: const Center(
+            child: Center(
               child: Text(
-                '£50',
+                '£${difference.toInt()}',
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.black),
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 13,
+                ),
               ),
             ),
           ),
