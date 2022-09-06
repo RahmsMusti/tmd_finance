@@ -25,7 +25,10 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
     const Tab(text: 'Monthly Summary'),
   ];
 
-  var incomeList = <Widget>[];
+  var incomeList = <Widget>[
+    const InputRowExamples(
+        titleExample: 'Salary', budgetExample: '£2134', actualExample: '£2200')
+  ];
   var fixedExpensesList = <Widget>[];
   var savingsList = <Widget>[];
   var variableExpensesList = <Widget>[];
@@ -120,11 +123,6 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                   colour: Color.fromARGB(255, 67, 160, 71),
                   section: 'Income',
                 ),
-                const InputRowExamples(
-                  titleExample: 'Salary',
-                  budgetExample: '£2134',
-                  actualExample: '£2200',
-                ),
                 Column(
                   children: incomeList,
                 ),
@@ -167,12 +165,9 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                   height: 10,
                 ),
                 const SectionTitles(
-                    colour: Color.fromARGB(255, 0, 172, 193),
-                    section: 'Fixed Expenses'),
-                const InputRowExamples(
-                    titleExample: 'Mortgage/Rent',
-                    budgetExample: 'e.g £500',
-                    actualExample: 'e.g £600'),
+                  colour: Color.fromARGB(255, 0, 172, 193),
+                  section: 'Fixed Expenses',
+                ),
                 Column(
                   children: fixedExpensesList,
                 ),
@@ -215,13 +210,9 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                   height: 10,
                 ),
                 const SectionTitles(
-                    colour: Color.fromARGB(255, 1, 87, 155),
-                    section: 'Savings'),
-                // const InputRowExamples(
-                //   titleExample: 'savings',
-                //   budgetExample: '£',
-                //   actualExample: '£',
-                // ),
+                  colour: Color.fromARGB(255, 1, 87, 155),
+                  section: 'Savings',
+                ),
                 Column(
                   children: savingsList,
                 ),
@@ -264,13 +255,9 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                   height: 10,
                 ),
                 const SectionTitles(
-                    colour: Color.fromARGB(255, 255, 138, 101),
-                    section: 'Variable Expenses'),
-                // const InputRowExamples(
-                //   titleExample: 'Food',
-                //   budgetExample: '£',
-                //   actualExample: '£',
-                // ),
+                  colour: Color.fromARGB(255, 255, 138, 101),
+                  section: 'Variable Expenses',
+                ),
                 Column(
                   children: variableExpensesList,
                 ),
@@ -313,13 +300,9 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                   height: 10,
                 ),
                 const SectionTitles(
-                    colour: Color.fromARGB(255, 109, 76, 65),
-                    section: 'Misc. Expenses'),
-                // const InputRowExamples(
-                //   titleExample: 'Presents',
-                //   budgetExample: '£',
-                //   actualExample: '£',
-                // ),
+                  colour: Color.fromARGB(255, 109, 76, 65),
+                  section: 'Misc. Expenses',
+                ),
                 Column(
                   children: miscelleneousExpensesList,
                 ),
@@ -378,7 +361,7 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                         color: Colors.white,
                         child: const Center(
                           child: Text(
-                            '£50',
+                            'Total:',
                             textAlign: TextAlign.center,
                             style: TextStyle(color: Colors.black),
                           ),
@@ -389,11 +372,11 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                       child: Container(
                         height: 50,
                         color: Colors.white,
-                        child: const Center(
+                        child: Center(
                           child: Text(
-                            '£50',
+                            '${const InputRowExamples().budgetExample}',
                             textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.black),
+                            style: const TextStyle(color: Colors.black),
                           ),
                         ),
                       ),
@@ -430,8 +413,9 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                   height: 10,
                 ),
                 const SectionTitles(
-                    colour: Color.fromARGB(255, 0, 172, 193),
-                    section: 'Fixed Expenses'),
+                  colour: Color.fromARGB(255, 0, 172, 193),
+                  section: 'Fixed Expenses',
+                ),
                 Row(
                   children: [
                     Expanded(
@@ -440,7 +424,7 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                         color: Colors.white,
                         child: const Center(
                           child: Text(
-                            '£50',
+                            'Total:',
                             textAlign: TextAlign.center,
                             style: TextStyle(color: Colors.black),
                           ),
@@ -502,7 +486,7 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                         color: Colors.white,
                         child: const Center(
                           child: Text(
-                            '£50',
+                            'Total:',
                             textAlign: TextAlign.center,
                             style: TextStyle(color: Colors.black),
                           ),
@@ -554,8 +538,9 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                   height: 10,
                 ),
                 const SectionTitles(
-                    colour: Color.fromARGB(255, 255, 138, 101),
-                    section: 'Variable Expenses'),
+                  colour: Color.fromARGB(255, 255, 138, 101),
+                  section: 'Variable Expenses',
+                ),
                 Row(
                   children: [
                     Expanded(
@@ -564,7 +549,7 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                         color: Colors.white,
                         child: const Center(
                           child: Text(
-                            '£50',
+                            'Total',
                             textAlign: TextAlign.center,
                             style: TextStyle(color: Colors.black),
                           ),
@@ -616,8 +601,9 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                   height: 10,
                 ),
                 const SectionTitles(
-                    colour: Color.fromARGB(255, 109, 76, 65),
-                    section: 'Misc. Expenses'),
+                  colour: Color.fromARGB(255, 109, 76, 65),
+                  section: 'Misc. Expenses',
+                ),
                 Row(
                   children: [
                     Expanded(
@@ -626,7 +612,7 @@ class _BudgetPageJanState extends State<BudgetPageJan> {
                         color: Colors.white,
                         child: const Center(
                           child: Text(
-                            '£50',
+                            'Total:',
                             textAlign: TextAlign.center,
                             style: TextStyle(color: Colors.black),
                           ),

@@ -5,7 +5,6 @@ import '../settings/settings_view.dart';
 import 'package:tmd_finance/src/sample_feature/sample_item.dart';
 import 'package:tmd_finance/src/components/section_titles.dart';
 import 'package:tmd_finance/src/components/input_row_examples.dart';
-import 'package:tmd_finance/src/components/input_row.dart';
 // import 'sample_item_details_view.dart';
 
 /// Displays a list of SampleItems.
@@ -26,7 +25,10 @@ class _BudgetPageAugState extends State<BudgetPageAug> {
     const Tab(text: 'Monthly Summary'),
   ];
 
-  var incomeList = <Widget>[];
+  var incomeList = <Widget>[
+    const InputRowExamples(
+        titleExample: 'Salary', budgetExample: '£2134', actualExample: '£2200')
+  ];
   var fixedExpensesList = <Widget>[];
   var savingsList = <Widget>[];
   var variableExpensesList = <Widget>[];
@@ -77,7 +79,7 @@ class _BudgetPageAugState extends State<BudgetPageAug> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
                   Text(
-                    'August',
+                    'January',
                     style: TextStyle(fontSize: 15.0),
                   )
                 ],
@@ -121,11 +123,6 @@ class _BudgetPageAugState extends State<BudgetPageAug> {
                   colour: Color.fromARGB(255, 67, 160, 71),
                   section: 'Income',
                 ),
-                const InputRowExamples(
-                  titleExample: 'Salary',
-                  budgetExample: '£2134',
-                  actualExample: '£2200',
-                ),
                 Column(
                   children: incomeList,
                 ),
@@ -139,7 +136,7 @@ class _BudgetPageAugState extends State<BudgetPageAug> {
                       onPressed: () {
                         setState(() {
                           incomeList.add(
-                            InputRow(),
+                            const InputRowExamples(),
                           );
                         });
                       },
@@ -168,12 +165,9 @@ class _BudgetPageAugState extends State<BudgetPageAug> {
                   height: 10,
                 ),
                 const SectionTitles(
-                    colour: Color.fromARGB(255, 0, 172, 193),
-                    section: 'Fixed Expenses'),
-                const InputRowExamples(
-                    titleExample: 'Mortgage/Rent',
-                    budgetExample: 'e.g £500',
-                    actualExample: 'e.g £600'),
+                  colour: Color.fromARGB(255, 0, 172, 193),
+                  section: 'Fixed Expenses',
+                ),
                 Column(
                   children: fixedExpensesList,
                 ),
@@ -187,7 +181,7 @@ class _BudgetPageAugState extends State<BudgetPageAug> {
                       onPressed: () {
                         setState(() {
                           fixedExpensesList.add(
-                            InputRow(),
+                            const InputRowExamples(),
                           );
                         });
                       },
@@ -216,12 +210,9 @@ class _BudgetPageAugState extends State<BudgetPageAug> {
                   height: 10,
                 ),
                 const SectionTitles(
-                    colour: Color.fromARGB(255, 1, 87, 155),
-                    section: 'Savings'),
-                const InputRowExamples(
-                    titleExample: 'savings',
-                    budgetExample: '£',
-                    actualExample: '£'),
+                  colour: Color.fromARGB(255, 1, 87, 155),
+                  section: 'Savings',
+                ),
                 Column(
                   children: savingsList,
                 ),
@@ -235,7 +226,7 @@ class _BudgetPageAugState extends State<BudgetPageAug> {
                       onPressed: () {
                         setState(() {
                           savingsList.add(
-                            InputRow(),
+                            const InputRowExamples(),
                           );
                         });
                       },
@@ -264,12 +255,9 @@ class _BudgetPageAugState extends State<BudgetPageAug> {
                   height: 10,
                 ),
                 const SectionTitles(
-                    colour: Color.fromARGB(255, 255, 138, 101),
-                    section: 'Variable Expenses'),
-                const InputRowExamples(
-                    titleExample: 'Food',
-                    budgetExample: '£',
-                    actualExample: '£'),
+                  colour: Color.fromARGB(255, 255, 138, 101),
+                  section: 'Variable Expenses',
+                ),
                 Column(
                   children: variableExpensesList,
                 ),
@@ -283,7 +271,7 @@ class _BudgetPageAugState extends State<BudgetPageAug> {
                       onPressed: () {
                         setState(() {
                           variableExpensesList.add(
-                            InputRow(),
+                            const InputRowExamples(),
                           );
                         });
                       },
@@ -312,12 +300,9 @@ class _BudgetPageAugState extends State<BudgetPageAug> {
                   height: 10,
                 ),
                 const SectionTitles(
-                    colour: Color.fromARGB(255, 109, 76, 65),
-                    section: 'Misc. Expenses'),
-                const InputRowExamples(
-                    titleExample: 'Presents',
-                    budgetExample: '£',
-                    actualExample: '£'),
+                  colour: Color.fromARGB(255, 109, 76, 65),
+                  section: 'Misc. Expenses',
+                ),
                 Column(
                   children: miscelleneousExpensesList,
                 ),
@@ -331,7 +316,7 @@ class _BudgetPageAugState extends State<BudgetPageAug> {
                       onPressed: () {
                         setState(() {
                           miscelleneousExpensesList.add(
-                            InputRow(),
+                            const InputRowExamples(),
                           );
                         });
                       },
@@ -428,8 +413,9 @@ class _BudgetPageAugState extends State<BudgetPageAug> {
                   height: 10,
                 ),
                 const SectionTitles(
-                    colour: Color.fromARGB(255, 0, 172, 193),
-                    section: 'Fixed Expenses'),
+                  colour: Color.fromARGB(255, 0, 172, 193),
+                  section: 'Fixed Expenses',
+                ),
                 Row(
                   children: [
                     Expanded(

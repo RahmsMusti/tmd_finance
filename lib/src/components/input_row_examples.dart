@@ -123,8 +123,8 @@ class _InputRowExamplesState extends State<InputRowExamples> {
               child: Text(
                 '£${difference.toInt()}',
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.black,
+                style: TextStyle(
+                  color: difference >= 0 ? Colors.black : Colors.red,
                   fontSize: 13,
                 ),
               ),
